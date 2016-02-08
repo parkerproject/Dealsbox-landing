@@ -1,14 +1,13 @@
 // This is the base controller. Used for base routes, such as the default index/root path, 404 error pages, and others.
-require('dotenv').load();
-var swig = require('swig');
+require('dotenv').load()
+var swig = require('swig')
 
 module.exports = {
   index: {
     handler: function (request, reply) {
-      reply.view('index2', {
-
-        title: 'Discover and save on local deals - DEALSBOX'
-      });
+      reply.view('index', {
+        title: ''
+      })
 
     },
     app: {
@@ -19,7 +18,7 @@ module.exports = {
     handler: function (request, reply) {
       reply.view('fbconfirm', {
         title: 'Thank you'
-      });
+      })
     },
     app: {
       name: 'fbconfirm'
@@ -29,7 +28,7 @@ module.exports = {
     handler: function (request, reply) {
       reply.view('404', {
         title: 'You found a missing page, but won the 404 error!'
-      }).code(404);
+      }).code(404)
     },
     app: {
       name: '404'
@@ -37,10 +36,10 @@ module.exports = {
   },
   business: {
     handler: function (request, reply) {
-      return reply.redirect("https://merchant.dealsbox.co");
+      return reply.redirect('https://merchant.dealsbox.co')
     },
     app: {
       name: 'business'
     }
   }
-};
+}
